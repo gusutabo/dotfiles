@@ -17,9 +17,30 @@
   (setq nyan-wavy-trail t)
   (nyan-start-animation))
 
+(use-package ligature
+  :ensure t
+  :config
+  (ligature-set-ligatures 't '("www"))
+  (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+  (ligature-set-ligatures 'prog-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
+                                       ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
+                                       "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
+                                       "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
+                                       "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
+                                       "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
+                                       "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
+                                       "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
+                                       ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
+                                       "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
+                                       "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
+                                       "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+                                       "\\\\" "://"))
+
+  (global-ligature-mode t))
+
 (use-package gruvbox-theme
   :ensure t
-  :config (load-theme 'gruvbox-dark-medium t))
+  :config (load-theme 'gruvbox-dark-hard t))
 
 (use-package lsp-mode
   :ensure t
@@ -32,6 +53,19 @@
 
 (use-package cape
   :ensure t)
+
+(use-package org
+  :ensure nil
+  :hook (org-mode . visual-line-mode)
+  :config
+  (setq org-startup-indented t)
+  (setq org-hide-leading-stars t)
+  (setq org-ellipsis " ▾")
+  (setq org-src-fontify-natively t))
+
+(use-package org-modern
+  :ensure t
+  :hook (org-mode . org-modern-mode))
 
 (use-package all-the-icons
   :ensure t)
@@ -69,7 +103,6 @@
 (setq inhibit-startup-screen t)
 (setq ring-bell-function 'ignore)
 (setq visible-bell nil)
-(global-display-line-numbers-mode 1)
 (column-number-mode 1)
 (set-fringe-mode 0)
 (tool-bar-mode -1)
