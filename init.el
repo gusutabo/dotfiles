@@ -67,6 +67,10 @@
   :ensure t
   :hook (org-mode . org-modern-mode))
 
+(use-package olivetti
+  :ensure t
+  :hook (org-mode . olivetti-mode))
+
 (use-package all-the-icons
   :ensure t)
 
