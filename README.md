@@ -1,3 +1,5 @@
+<img width="3072" height="1664" alt="image" src="https://github.com/user-attachments/assets/6060ade4-2a3d-4cef-a9d2-ab1203ed09c2" />
+
 # dotfiles
 
 My personal Emacs configuration.
